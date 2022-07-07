@@ -13,7 +13,7 @@ jobs:
   approve_hotfix_pr:
     name: Approve Hotfix PR
     runs-on: "ubuntu"
-    if: ${{ github.event.label.name === 'hotfix' }}
+    if: ${{ github.event.label.name == 'hotfix' }}
     permissions:
       pull-requests: write
     steps:

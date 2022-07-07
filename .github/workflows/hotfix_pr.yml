@@ -1,0 +1,22 @@
+name: Auto-approve hotfix-tagged pull requests
+
+on:
+  pull_request:
+    # when you add a label to open PR
+    types:
+      - labeled
+    # when merging to master
+    branches:
+      - "master"
+
+jobs:
+  approve_hotfix_pr:
+    name: Approve Hotfix PR
+    runs-on: "ubuntu-latest"
+    if: ${{ github.event.label.name == 'hotfix' }}
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: hmarr/auto-approve-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

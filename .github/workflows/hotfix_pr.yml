@@ -17,6 +17,7 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - uses: hmarr/auto-approve-action@v2
+      - uses: ghaith96/auto-approve-action@feature/add-optional-review-message
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          review-message: "Auto approved hotfix PR"

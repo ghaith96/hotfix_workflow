@@ -1,2 +1,2 @@
 # hotfix_workflow
-hotfix workflow for protected branches
+auto-approve hotfix labeled PRs to facilitate hotfix deployments.
